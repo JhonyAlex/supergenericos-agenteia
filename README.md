@@ -1,10 +1,10 @@
 # Agente IA Comercial | Super Genericos del Valle
 
-> Asistente virtual para atencion comercial, soporte de solicitudes y automatizacion de flujos con escalamiento inteligente.
+> Grupo Nedemy es la empresa implementadora del agente de IA para Super Genericos del Valle: un asistente virtual para atencion comercial, soporte de solicitudes y automatizacion de flujos con escalamiento inteligente.
 
 ## Vista general
 
-El objetivo de este repositorio es centralizar la documentacion funcional del agente IA para que el equipo pueda:
+Como Grupo Nedemy, centralizamos en este repositorio la documentacion funcional del agente IA para que el equipo pueda:
 
 - Atender clientes con respuestas consistentes y profesionales.
 - Activar acciones automaticas segun reglas del negocio.
