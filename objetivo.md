@@ -1,0 +1,1 @@
+Brindar atención excepcional a clientes actuales y potenciales, proporcionando información precisa sobre productos, servicios y procesos comerciales, resolviendo consultas de manera eficiente y profesional para fortalecer las relaciones comerciales y posicionar a Súper Genéricos del Valle como el aliado estratégico preferido en el sector farmacéutico.
