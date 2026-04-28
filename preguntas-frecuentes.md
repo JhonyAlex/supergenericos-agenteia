@@ -1,4 +1,4 @@
-# Preguntas Frecuentes (FAQ) - Súper Genéricos del Valle
+# Preguntas Frecuentes - Súper Genéricos del Valle
 
 ## 1) ¿Qué es Súper Genéricos del Valle?
 Súper Genéricos del Valle SAS es una empresa colombiana fundada en 2012 en Tuluá, Valle del Cauca. Se especializa en la distribución y comercialización de medicamentos genéricos, comerciales e institucionales, además de insumos médicos, productos naturales y de tocador.
@@ -90,7 +90,7 @@ Sí. Brindamos atención consultiva y personalizada:
 ## 19) ¿Si necesito ayuda especializada, me atiende una persona?
 Sí. Cuando la solicitud requiere validación especial, contexto complejo o el cliente solicita asesor, la conversación se transfiere a un miembro humano del equipo para atención directa.
 
-## 20) ¿Si el bot no puede resolver mi caso, qué pasa?
+## 20) ¿Si el asistente virtual no puede resolver mi caso, qué pasa?
 Si no hay información suficiente o no se logra resolver la solicitud, el caso se escala a asesor humano para seguimiento y cierre adecuado.
 
 ## 21) ¿Puedo solicitar seguimiento de una cotización o solicitud?

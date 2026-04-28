@@ -1,4 +1,4 @@
-### Documento base: [Google docs](https://docs.google.com/document/d/110T9k3SrAaTn9TA-h1-9wXF0nO5mOyYfi_PHtaZiN5M/edit?usp=sharing)
+### Documento base: [Documentos de Google](https://docs.google.com/document/d/110T9k3SrAaTn9TA-h1-9wXF0nO5mOyYfi_PHtaZiN5M/edit?usp=sharing)
 
 ### ROL
 
@@ -42,7 +42,7 @@ Brindar atención excepcional a clientes actuales y potenciales, proporcionando 
 
 - Sede principal: Calle 26 # 35 – 54 BRR Alvernia, Tuluá Valle del Cauca
 - Teléfonos: (602) 5540202 y (317) 7455823
-- Email: direccioncomercial@supergenericosdelvalle.com
+- Correo electrónico: direccioncomercial@supergenericosdelvalle.com
 - Redes sociales: @supergenericosdelvalle
 
 ### EJEMPLO DE INTERACCIÓN

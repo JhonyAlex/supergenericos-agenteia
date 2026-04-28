@@ -1,10 +1,10 @@
-# Detener Bot
+# Detener Asistente Virtual
 
-Matriz para administrar múltiples escenarios donde el bot debe detenerse en una sola vista.
+Matriz para administrar múltiples escenarios donde el asistente virtual debe detenerse en una sola vista.
 
 ## Tabla de escenarios
 
-| ID | Habilitar | Nombre del escenario | Condición de activación | Frases de ejemplo | Mensaje final del bot | Duración de pausa | Reactivar automático | Reactivar bot (horas) | Crear tarea en contacto | Etiquetas personalizadas |
+| ID | Habilitar | Nombre del escenario | Condición de activación | Frases de ejemplo | Mensaje final del asistente virtual | Duración de pausa | Reactivar automático | Reactivar asistente virtual (horas) | Crear tarea en contacto | Etiquetas personalizadas |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 01 | [ ] | [ ] | [ ] | [ ]<br>[ ]<br>[ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | XX | [ ] | [ ] | [ ] | [ ]<br>[ ]<br>[ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -22,7 +22,7 @@ Matriz para administrar múltiples escenarios donde el bot debe detenerse en una
 | Mensaje final | [ ] |
 | Duración de pausa | [ ] |
 | Reactivar automático | [ ] |
-| Reactivar bot después de | [ ] |
+| Reactivar asistente virtual después de | [ ] |
 | Crear tarea en el contacto | [ ] |
 | Etiquetas personalizadas | [ ] |
 

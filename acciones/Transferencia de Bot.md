@@ -1,10 +1,10 @@
-# Transferencia de Bot
+# Transferencia de Asistente Virtual
 
-Matriz para administrar múltiples escenarios de transferencia del bot a otro agente en una sola vista.
+Matriz para administrar múltiples escenarios de transferencia del asistente virtual a otro agente en una sola vista.
 
 ## Tabla de escenarios
 
-| ID | Habilitar | Nombre del escenario | Condición de activación | Frases de ejemplo | Agente destino | Omitir si ya tiene agente asignado | Mensaje final del bot | Reactivar bot (horas) | Crear tarea en contacto | Etiquetas personalizadas |
+| ID | Habilitar | Nombre del escenario | Condición de activación | Frases de ejemplo | Agente destino | Omitir si ya tiene agente asignado | Mensaje final del asistente virtual | Reactivar asistente virtual (horas) | Crear tarea en contacto | Etiquetas personalizadas |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 01 | [ ] | [ ] | [ ] | [ ]<br>[ ]<br>[ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | XX | [ ] | [ ] | [ ] | [ ]<br>[ ]<br>[ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -22,13 +22,13 @@ Matriz para administrar múltiples escenarios de transferencia del bot a otro ag
 | Transferir conversación a agente | [ ] |
 | Omitir transferencia si ya tiene agente asignado | [ ] |
 | Mensaje final | [ ] |
-| Reactivar bot después de | [ ] |
+| Reactivar asistente virtual después de | [ ] |
 | Crear tarea en el contacto | [ ] |
 | Etiquetas personalizadas | [ ] |
 
 ## Notas de uso
 
 - Duplica la fila XX para cada nuevo escenario.
-- Diferencia esta acción de transferencia a humano cuando el destino sea otro bot o agente automatizado.
+- Diferencia esta acción de transferencia a humano cuando el destino sea otro asistente virtual o agente automatizado.
 - Define claramente el agente destino y sus responsabilidades.
 - Revisa la coexistencia con reglas de detención o seguimiento.

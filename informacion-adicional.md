@@ -19,7 +19,7 @@
 
 - **Dirección**: Calle 26 # 35 – 54 BRR Alvernia, Tuluá Valle del Cauca
 - **Teléfonos**: (602) 5540202 y (317) 7455823
-- **Email**: direccioncomercial@supergenericosdelvalle.com
+- **Correo electrónico**: direccioncomercial@supergenericosdelvalle.com
 - **Redes**: @supergenericosdelvalle (Facebook e Instagram)
 
 ### **Servicios Digitales:**
