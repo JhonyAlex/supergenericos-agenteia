@@ -96,7 +96,7 @@ Corresponde a clientes que **NO** están ubicados en ninguno de los municipios d
 | Campo                      | Tipo/Valores                                               |
 | -------------------------- | ---------------------------------------------------------- |
 | NOMBRE ESTABLECIMIENTO     | Texto                                                      |
-| NOMBRE PERSONA DE CONTACTO | Texto                                                      |
+| ALIAS CONTACTO  | Texto                                                      |
 | CIUDAD                     | Texto                                                      |
 | ZONA                       | Texto/Select*(se deriva de la ciudad)*                     |
 | CATÁLOGO DEL CLIENTE      | Select: Minorista, Mayorista, Cacharrero, Minorista Tuluá |
@@ -107,13 +107,13 @@ Corresponde a clientes que **NO** están ubicados en ninguno de los municipios d
 
 Durante el flujo de registro por IA/WhatsApp se deben capturar:
 
-1. Nombre y apellidos completos
+1. Nombre y apellidos completos (PREGUNTAR AL CLIENTE COMO DESEA QUE LO LLAME) Y PARA QUE SEA MAS FORMAL SI ES HOMBRE AGREGAR SR. O SI ES MUJER SRA. 
 2. Ciudad y departamento
 3. RUT o certificado de Cámara de Comercio
 
 ### 2.3 Zona y Asignación de Clientes
 
-- Los clientes se asignan a una **zona** según su ciudad.
+- Los clientes se asignan a una **zona** según su ciudad Y DEPARTAMENTO 
 - La zona determina automáticamente el **asesor responsable**.
 - Si no existe coincidencia de ciudad en ninguna zona, se asigna al **Call Center** (reparto equitativo).
 - *(Referencia cruzada: ver [Sección 1.1 — Filosofía de Asignación](#11-filosofía-de-asignación) y [Sección 1.2 — Mapeo de Asesores](#12-mapeo-de-asesores-comerciales)).*
@@ -126,6 +126,8 @@ Durante el flujo de registro por IA/WhatsApp se deben capturar:
 
 - Definir **etapas del embudo de ventas**.
 - Si aplica, definir etapas también para **Finanzas / Logística / Cartera**.
+
+- POR AHORA EL CRM SOLO SE VA A DEJAR COMERCIAL, ENT SE DEBEN QUITAR ESOS EMBUDOS DE FINANZAS, CARTERA Y DEMAS. TODOS DEBEN DIRIGIRSE AL AREA COMERCIAL 
 
 > **Estado:** Pendiente de definición por parte del cliente. El documento menciona el tema pero no detalla las etapas.
 
@@ -160,7 +162,7 @@ Durante el flujo de registro por IA/WhatsApp se deben capturar:
 > 👋 ¡Hola! Soy **Nonoi**, el asistente virtual de **Super Genéricos del Valle**.
 > Veo que aún no estás registrado, así que déjame contarte un poco sobre nosotros:
 >
-> Somos un **distribuidor farmacéutico** con más de **13 años de trayectoria**, ubicado en **Tuluá, Valle del Cauca**, y con cobertura de **envíos a nivel nacional**.
+> Somos un **distribuidor farmacéutico** con más de **14 años de trayectoria**, ubicado en **Tuluá, Valle del Cauca**, y con cobertura de **envíos a nivel nacional**.
 > Actualmente contamos con la confianza de más de **900 clientes** en todo el país. En nuestro portafolio encontrarás más de **5.000 referencias**, que incluyen: medicamentos, productos naturales, cuidado personal e insumos médicos.
 >
 > También trabajamos con diferentes canales como **droguerías, tiendas naturistas, cacharrerías y distribuidores**, lo que nos permite ofrecer **precios competitivos** y **ofertas exclusivas cada semana** para tu negocio.
@@ -181,14 +183,15 @@ Durante el flujo de registro por IA/WhatsApp se deben capturar:
 > Y si en cualquier momento prefieres hablar con un asesor, solo escribe la palabra **ASESOR** y te conectaré de inmediato.
 > ¡Gracias por tu interés en nosotros! 🙌
 
-**Acción interna:** Redirigir a un embudo de asignación equitativa (ya que aún no se conoce la ciudad) O crear una tarea de llamarlo.
+**Acción interna:** Redirigir a un embudo de asignación equitativa (ya que aún no se conoce la ciudad) O crear una tarea de llamarlo. HACERLE SEGUIMIENTO A LA TAREA DEBE TENER MAXIMO 24 HORAS HABILES PARA LLAMARLO 
 *(Referencia cruzada: ver [Sección 1.3 — Zona: CALL CENTER](#zona-call-center-asignación-equitable) para asignación equitativa, y [Sección 5 — Automatización de Tareas](#5-automatización-de-tareas-para-asesores) para creación de tareas).*
 
 #### 4.3.3 Respuesta: "Sí, quiero registrarme"
 
 > 👋 ¡Genial! Para registrarte necesito algunos datos básicos, con los cuales podré asignarte un **asesor personalizado** que te acompañará en todo el proceso.
 >
-> 1⃣ **Tu nombre y apellidos completos**
+> 1⃣ NOMBRE DEL NEGOCIO (GUARADARLO EN EL CAMPO DEL CLIENTE)
+> 2. NOMBRE Y APPELLIDO DE CONTACTO ** ** (GUARDARLO EN EL CAMPO DE CLIENTE) Y TENER EN CUENTA SR. O SRA. 
 > 2⃣ **Ciudad y departamento** donde se encuentra tu negocio
 
 **Cuando el cliente envía estos datos:**
@@ -196,7 +199,7 @@ Durante el flujo de registro por IA/WhatsApp se deben capturar:
 > ✅ ¡Gracias por tu información!
 > 📎 Para completar tu registro y ofrecerte los **mejores precios y condiciones comerciales adaptadas a tu negocio**, necesito que me compartas tu **RUT** o tu **certificado de Cámara de Comercio**.
 >
-> 👉 No te preocupes, tu información será tratada de manera **segura y confidencial**. Solo la utilizamos para validar tu negocio y asignarte un **asesor comercial personalizado** que te acompañará en todo momento.
+> 👉 No te preocupes, tu información será tratada de manera **segura y confidencial**. Solo la utilizamos para validar LA ACTIVIDAD COMERCIAL DE TU negocio y asignarte un CATALOGO DE PRECIOS Y UN **asesor comercial personalizado** que te acompañará en todo momento.
 >
 > 🔒 Puedes consultar nuestra **Política de Tratamiento de Datos** aquí: [Política de Tratamiento de Datos – Super Genéricos del Valle](https://supergenericosdelvalle.com/wp-content/uploads/2023/12/POLITICA-DE-TRATAMIENTO-DE-DATOS-2022.pdf)
 
@@ -215,6 +218,8 @@ Durante el flujo de registro por IA/WhatsApp se deben capturar:
 ### 4.4 Flujo de Conversación: Contacto Creado en CRM
 
 > **Estado:** Pendiente de definición. El documento indica que debe existir un mensaje de bienvenida diferenciado para contactos ya creados, pero no proporciona el contenido del mensaje.
+
+EL MENSAJE DE BINVENIDA PARA CLIENTES YA CREADOS EN EL CRM.
 
 **Comportamiento esperado:**
 
