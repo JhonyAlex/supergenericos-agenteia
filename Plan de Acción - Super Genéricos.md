@@ -29,6 +29,8 @@ PRUEBA
 - Ventaja: si se cambia un asesor, basta con reasignar la zona completa sin modificar cliente por cliente.
 - *(Referencia cruzada: ver [Sección 2.3 — Zona y Asignación de clientes](#23-zona-y-asignación-de-clientes) y [Sección 4.3 — Flujo de registro de cliente nuevo](#43-flujo-de-registro-de-cliente-nuevo) donde la ciudad determina la zona y ésta el asesor).*
 
+- PERO TENGO UN INCONVENIENTE,  LA ZONA CALL CENTER NO ESTA ASIGNADA A UN SOLO ASESOR, SINO QUE LOS CLIENTES ESTAN REPARTIDOS ENTRE LOS ASESORES. ENT EN ESTA ZONA SI TOCARIA ASIGNAR EL CLIENTE X USUARIO Y NO LA ZONA CALL CENTER A UN SOLO ASESOR. 
+
 ### 1.2 Mapeo de Asesores Comerciales
 
 (✅usuarios creados - por confirmar ⚠️)
@@ -218,13 +220,58 @@ Durante el flujo de registro por IA/WhatsApp se deben capturar:
 ### 4.4 Flujo de Conversación: Contacto Creado en CRM
 
 > **Estado:** Pendiente de definición. El documento indica que debe existir un mensaje de bienvenida diferenciado para contactos ya creados, pero no proporciona el contenido del mensaje.
+>
+> MENSAJE DE BIENVENIDA PARA CLIENTES YA CREADOS
+>
+> ¡Buenos días / buenas tardes,(segun el horario) {alias_cliente}!
+Esperamos que se encuentre muy bien 😊
+Le informamos que actualmente contamos con nuestras SÚPER OFERTAS disponibles para hoy 
+¿En qué podemos ayudarte el día de hoy?
+1️⃣ Realizar cotización o pedido / conocer súper ofertas del día
+2️⃣ Agendar llamada con un asesor
+3️⃣ Otra consulta
+
+mensaje de respuesta segun la opción:
+
+opcion 1:
+¡Perfecto, {alias_cliente}! 😊
+En el siguiente PDF encontrarás nuestras SÚPER OFERTAS vigentes
+Recuerda tener en cuenta las formas de pago, ya que algunas promociones aplican exclusivamente para pagos de contado.
+Adicionalmente, contamos con un amplio portafolio de productos disponible para tu negocio.
+Cuéntame qué productos necesitas para realizar tu cotización o pedido.
+
+opcion 2: 
+¡Perfecto, {alias_cliente}! 😊
+Tu solicitud de llamada ha sido programada correctamente con tu asesor comercial asignado.
+En un tiempo nos estaremos comunicando contigo para brindarte la atención requerida.
+Gracias por escribirnos y confiar en nosotros.
+
+Opcion 3:
+Estimado {alias_cliente} 😊
+
+Si deseas realizar una petición, queja, reclamo, sugerencia o felicitación, el único canal autorizado es el siguiente: 👉 https://pqfrs.supergenericosdelvalle.com
+
+Si deseas solicitar una devolución, debes realizarla únicamente por medio del siguiente enlace: 👉 https://devoluciones.supergenericosdelvalle.com
+
+Si deseas realizar un pago en línea, puedes hacerlo a través del siguiente link: 👉 https://checkout.wompi.co/method
+
+Para cualquier otro tipo de consulta, escribe la palabra AYUDA y con gusto te ayudaré.
 
 EL MENSAJE DE BINVENIDA PARA CLIENTES YA CREADOS EN EL CRM.
 
 **Comportamiento esperado:**
 
+SI EL CLIENTE MARCA LA OPCION 1 
+DEBE ENVIRALE AL CLIENTE EL PDF DE LAS OFERTAS VIGENTES, ESTO SIEMPRE Y CUANDO EL CLIENTE ESTE HABILITADO COMO RECIBIR OFERTAS Y DEBE TRASLADARLO AL EMBUDO DE CLIENTES DE COTIZACIÓN
+
+SI EL CLIENTE MARCA LA OPCION 2 
+DEBE CREAR TAREA AL ASESOR DE LLAMADA Y DEBE REALIZARLA MAXIMO EN 1 HORA 
+
+SI EL CLIENTE MARCA LA OPCION 3 
+SI EL CLIENTE ESCRIBE AYUDA LLEVAR AL EMBUDO DE OTRAS CONSULTAS 
+
 - Al identificar que el contacto ya existe en el CRM, mostrar un mensaje de bienvenida diferente al de contacto nuevo.
-- *(Nota: en una versión futura con plugin, se mostraría un menú interactivo con opciones: Cartera, Logística, Ventas — ver [Sección 9 — Fases Futuras](#92-integración-futura-con-erp)).*
+- *(Nota: en una versión futura con plugin, se mostraría un menú interactivo con opciones: Cartera, Logística, Ventas — ver [Sección 9 — Fases Futuras](#92-integración-futura-con-erp)).* ESTO ES PARA EL FUTURO CUANDO SE INTEGREN LAS DEMAS AREAS, POR AHORA SOLO EL MENSAJE ANTERIOR 
 
 ### 4.5 Palabra Clave para Transferencia a Humano
 
@@ -239,18 +286,48 @@ EL MENSAJE DE BINVENIDA PARA CLIENTES YA CREADOS EN EL CRM.
 
 Implementar en el CRM la **asignación automática de tareas** a los asesores comerciales para garantizar comunicación oportuna con los clientes antes de las entregas. Las tareas consisten en **llamadas o mensajes** a los clientes.
 
-### 5.2 Tareas por Ruta de Entrega (Clientes con Ruta)
+REVISANDO EN TEMA DE LAS TAREAS Y VIENDO LA REALIDAD ACTUAL DE LA EMPRESA, HAY MUCHOS CLIENTES QUE YA NO LES GUSTA LA ATENCION POR LLAMADA Y TENIENDO EN CUENTA QUE EN EL MENU DE BINVENIDA AL CLIENTE YA CREADO EN EL CRM TIENE LA OPCION DE PROGRAMAR LLAMADA, PIENSO QUE LAS TAREAS MAS BIEN DEJARLA AL ASESOR SOLO CUANDO EL CLIENTE SOLICITE LA LLAMADA Y PARA ESTE CASO QUE HABIAMOS PLANTEADO LAS TAREAS PARA QUE EL ASESOR CONTACTE AL CLIENTE BASADO EN LAS RUTAS, MAS BIEN HACERLO CON AYUDA DE LA IA EN FORMA AUTOMATICA, ES DECIR QUE LOS CLIENTES QUE SEAN DE LAS POBLACIONES MENCIONADAS A CONTIUACION EN LAS RUTAS, QUE LA IA LES ESCRIBA DE FORMA AUTOMATICA AL LOS CLIENTES RECORDANDO LA RUTA Y PREGUNTANDO SI DESEA HACER PEDIDO PARA LA RUTA QUE SALE AL DIA SIGUIENTE. EL MENSAJE SERIA EL SIGUIENTE:
+
+EVIAR MENSAJE SOLO LOS DIAS LABORALES (LUNES A SABADO) NO LOS FESTIVOS. ENVIAR A 8:30AM 
+¡Buenos días, {alias_cliente}! 😊
+
+Te informamos que el día de mañana tendremos programación de ruta de entregas en tu zona 🚚
+
+Aún estás a tiempo de realizar tu pedido y aprovechar nuestras SÚPER OFERTAS disponibles, para que tu mercancía sea entregada en la ruta de mañana 
+
+Si deseas realizar una cotización, pedido o consultar promociones, escribe la palabra *ASESOR* y en un momento te atenderemos.
+
+SI EL CLIENTE ESCRIBE LA PALABRA ASESOR LLEVAR AL EMBUDO DE COTIZACION 
+
+PERO HAY QUE TENER EN CUENTA QUE LOS PEDIDOS DEL SABADO NO SE DESPACHAN EN LA RUTA COMO DICE EL MENSAJE DE MAÑANA SINO DEL LUNES Y SI ES FESTIVO ESA SEMANA SE PRESENTA VARIACIONES EN LA RUTA, ENT TOCA DEJAR LA OPCION DE CAMBIAR PARA FESTIVOS. 
+
+MENSAJE PARA EL ENVIAR EL SABADO - RUTA LUNES (NO FESTIVO)  ENVIAR  8:0O AM 
+
+¡Buenos días, {alias_cliente}! 😊
+
+Te informamos que el día lunes tendremos programación de ruta de entregas en tu zona 🚚
+
+Hasta las 11:00 a.m. puedes realizar tu pedido y aprovechar nuestras SÚPER OFERTAS disponibles, para que tu mercancía sea entregada en la ruta del lunes 
+
+Si deseas realizar una cotización, pedido o consultar promociones, escribe la palabra *ASESOR* y en un momento te atenderemos.
+
+
+SI EL CLIENTE ESCRIBE LA PALABRA ASESOR LLEVAR AL EMBUDO DE COTIZACION 
+
+
+NO SE QUE PASARIA CON ESTO AL HACERLO LA IA:
+### 5.2 Tareas por Ruta de Entrega (Clientes con Ruta) 
 
 | Requisito              | Detalle                                                                                         |
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
 | **Generación**  | Automática, el día**anterior** a la ruta de entrega                                     |
 | **Granularidad** | Cada cliente se lista como una tarea individual                                                 |
-| **Deadline**     | Antes de las**4:00 p.m.** del día anterior a la ruta (horario de cierre de facturación) |
+| **Deadline**     | Antes de las**3:00 p.m.** del día anterior a la ruta (horario de cierre de facturación) |
 | **Acción**      | Asesor contacta al cliente por llamada o mensaje                                                |
 
 **Ejemplo:**
 
-- Asignar tarea a Erika para contactar clientes de Pereira el **martes** antes de las 4:00 p.m., ya que la ruta de entrega para Pereira sale el **miércoles**.
+- Asignar tarea a Erika para contactar clientes de Pereira el **martes** antes de las 3:00 p.m., ya que la ruta de entrega para Pereira sale el **miércoles**.
   *(Referencia cruzada: ver [Sección 6.2 — Cronograma: Miércoles](#62-cronograma-semanal) — Pereira aparece en la ruta del miércoles).*
 
 ### 5.3 Tareas Recurrentes (Clientes sin Ruta)
@@ -286,12 +363,39 @@ Se requiere capacidad para modificar tareas de forma **rápida y masiva** en los
 
 | Día                 | Municipios                                                                                                                                                                                                                                                                                                                                                                              |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **LUNES**      | Armenia, Buenavista, Calarcá, Circasia, Córdoba, Filandia, Génova, La Tebaida, Montenegro, Pijao, Quimbaya, Salento, Alcalá, Caicedonia, Sevilla. Ansermanuevo, Bolívar, Cartago, El Dovio, La Unión, La Victoria, Obando, Roldanillo, Toro, Versalles, Zarzal. Dosquebradas, La Virginia, Pereira, Santa Rosa de Cabal. Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo. |
-| **MARTES**     | Cali, Buga, Candelaria, El Cerrito, Ginebra, Guacarí, Palmira, Pradera, Vijes, Yotoco, Yumbo. Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.                                                                                                                                                                                                                                 |
-| **MIÉRCOLES** | Armenia, Buenavista, Calarcá, Circasia, Córdoba, Filandia, Génova, La Tebaida, Montenegro, Pijao, Quimbaya, Salento, Alcalá, Caicedonia, Sevilla. Ansermanuevo, Bolívar, Cartago, El Dovio, La Unión, La Victoria, Obando, Roldanillo, Toro, Versalles, Zarzal. Dosquebradas, La Virginia, Pereira, Santa Rosa de Cabal. Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo. |
-| **JUEVES**     | Cali, Buga, Candelaria, El Cerrito, Ginebra, Guacarí, Palmira, Pradera, Vijes, Yotoco, Yumbo. Calima-Darién, Restrepo. Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.                                                                                                                                                                                                       |
-| **VIERNES**    | Armenia, Buenavista, Calarcá, Circasia, Córdoba, Filandia, Génova, La Tebaida, Montenegro, Pijao, Quimbaya, Salento, Alcalá, Caicedonia, Sevilla. Ansermanuevo, Bolívar, Cartago, El Dovio, La Unión, La Victoria, Obando, Roldanillo, Toro, Versalles, Zarzal. Dosquebradas, La Virginia, Pereira, Santa Rosa de Cabal. Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo. |
-| **SÁBADO**    | Cali, Buga, Candelaria, El Cerrito, Ginebra, Guacarí, Palmira, Pradera, Vijes, Yotoco, Yumbo. Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.                                                                                                                                                                                                                                 |
+NUEVOS RUTEROS 
+
+LUNES 
+Armenia, Buenavista, Calarcá, Circasia, Córdoba, Filandia, Génova, La Tebaida, Montenegro, Pijao, Quimbaya, Salento, Alcalá, Caicedonia, Sevilla.
+Buga, Candelaria, El Cerrito, Ginebra, Guacarí, Palmira, Pradera, Vijes, Yotoco, Yumbo, La Magdalena, Amaime, Santa Helena, Costa rica, El placer
+Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.
+
+MARTES 
+Ansermanuevo, Bolívar, La paila, Cartago, El Dovio, La Unión, La Victoria, Obando, Roldanillo, Toro, Versalles, Zarzal. Dosquebradas, La Virginia, Pereira, Santa Rosa de Cabal.
+Buga
+Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.   
+
+MIERCOLES
+Buga, Candelaria, El Cerrito, Ginebra, Guacarí, Palmira, Pradera, Vijes, Yotoco, Yumbo, La Magdalena, Amaime, Santa Helena, Costa rica, El placer
+Calima Darién, Restrepo, Loboguerrero 
+Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.  
+
+JUEVES
+Ansermanuevo, Bolívar, La paila, Cartago, El Dovio, La Unión, La Victoria, Obando, Roldanillo, Toro, Versalles, Zarzal. Dosquebradas, La Virginia, Pereira, Santa Rosa de Cabal.
+Buga
+Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.   
+
+VIERNES 
+Buga, Candelaria, El Cerrito, Ginebra, Guacarí, Palmira, Pradera, Vijes, Yotoco, Yumbo, La Magdalena, Amaime, Santa Helena, Costa rica, El placer
+Calima Darién, Restrepo, Loboguerrero 
+Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.  
+
+SABADO 
+Ansermanuevo, Bolívar, La paila, Cartago, El Dovio, La Unión, La Victoria, Obando, Roldanillo, Toro, Versalles, Zarzal. Dosquebradas, La Virginia, Pereira, Santa Rosa de Cabal.
+Buga
+Andalucía, Bugalagrande, Riofrío, San Pedro, Trujillo.  
+
+                                                                                                                                                                                                                   |
 
 *(Referencia cruzada: las tareas de los asesores se generan el día anterior a cada ruta — ver [Sección 5.2](#52-tareas-por-ruta-de-entrega-clientes-con-ruta)).*
 
@@ -319,8 +423,33 @@ Se requiere capacidad para modificar tareas de forma **rápida y masiva** en los
 ### 7.3 Automatización Semanal
 
 - Cada **lunes**, cuando se actualizan las ofertas, el CRM debe enviar masivamente el **PDF de ofertas** solo a los clientes con el campo "Recibe ofertas" = `Sí`.
-- Se debe enviar un **link** a las ofertas semanales en lugar de adjuntar PDF pesado.
+- Se debe enviar un **link** a las ofertas semanales en lugar de adjuntar PDF pesado. PUES SI SE PUEDE ADJUNTAR EL PDF SERIA MUCHO MEJOR, YA QUE MUCHOS CLIENTES NO ABREN LINKS
   *(Referencia cruzada: ver requisito inicial — "Enviar link a las ofertas semanales (en lugar de adjuntar PDF pesado)").*
+
+ENVIAR LE SIGUIENTE MENSAJE EL PRIMER DIA HABIL DE CADA SEMANA (LUNES O MARTES) A TODOS LOS CLIETES QUE TENGAN MARCADO O ESTE SIN MARCAR LA OPCION DE SI OFERTAS A LAS 8:00AM 
+
+¡Buenos días, {alias_cliente}! 😊
+
+Desde Super Genéricos del Valle te deseamos una feliz, próspera y exitosa semana 🙌
+
+Adjunto encontrarás nuestras SÚPER OFERTAS vigentes para esta semana
+
+Recuerda tener en cuenta las formas de pago, ya que algunas ofertas aplican exclusivamente para pagos de contado.
+
+Si deseas realizar una cotización, pedido o consultar disponibilidad de productos, escribe la palabra *ASESOR* y en un momento te atenderemos.
+(ADJUNTAR PDF DE OFERTAS)
+
+ENVIAR LE SIGUIENTE MENSAJE EL PRIMER DIA HABIL DE CADA SEMANA (LUNES O MARTES) A TODOS LOS CLIETES QUE TENGAN MARCADO LA OPCION DE NO OFERTAS A LAS 8:00AM 
+
+¡Buenos días, {alias_cliente}! 😊
+
+Desde Super Genéricos del Valle te deseamos una feliz, próspera y exitosa semana 🙌
+
+Estamos atentos a cualquier solicitud que requieras. Recuerda que diariamente nos está ingresando nuevo inventario y constantemente estamos codificando nuevos productos para ampliar nuestro portafolio y ofrecerte más opciones para tu negocio 
+
+Si deseas realizar una cotización, pedido o consultar disponibilidad de productos, escribe la palabra *ASESOR* y en un momento te atenderemos.
+
+AL RESPONDER ASESOR LLEVAR AL EMBUDO DE COTIZACION 
 
 ---
 
@@ -333,6 +462,8 @@ Se requiere capacidad para modificar tareas de forma **rápida y masiva** en los
 | ¿Una sola línea para toda la empresa o números por área?         | **POR AHORA SOLO SE DEJA EL CRM**, a la espera del plugin.                                                                         |
 | Si es una sola línea, ¿menú de bienvenida con opciones por área? | **No aplica en esta fase** — el CRM se enfoca solo en el área comercial. No se requiere menú de opciones con las demás áreas. |
 
+SEGUN LO HABLADO CON WIDMAR POR AHORA SOLO SE VA A DEJAR EL CRM PARA LO COMERCIAL 
+
 ### 8.2 Enfoque Actual: Solo Área Comercial
 
 - El CRM y el bot se enfocan **únicamente en el área comercial** en esta primera fase.
@@ -340,13 +471,15 @@ Se requiere capacidad para modificar tareas de forma **rápida y masiva** en los
 
 ### 8.3 Reglas del Bot por Área
 
+PUES LA IA SE UTILIZARIA EN LO QUE SE REQUIERA DE LOS MENU ANTERIORMENTE MENCIONADOS, SEGUN LO QUE ENTIENDO CREO QUE SERIA MAS QUE TODO PARA LOS CLIENTES NO CREADOS EN EL CRM, YA QUE DEBE RESOLVER LAS DUDAS DE LOS PROSPECTOS CON BASE A LA INFORMACION DE LA EMPRESA QUE YO ENTREGARE EN UN DRIVE, YA CUANDO PASE A LOS EMBUDOS DEBE DEJAR DE FUNCIONAR LA IA. 
+
 - Definir **cuándo responde el bot** y **cuándo pasa a humano**.
 - Evaluar si **desactivar bot con proveedores**, si aplica.
 - El cliente puede escribir **`ASESOR`** en cualquier momento para transferencia a humano.
   *(Referencia cruzada: ver [Sección 4.5 — Palabra Clave para Transferencia](#45-palabra-clave-para-transferencia-a-humano)).*
 
 ### 8.4 Matriz de Privacidad / Accesos
-
+POR AHORA ESTO NO AFECTA YA QUE SOLO ES EL NUMERO COMERCIAL 
 - Definir **quién ve qué** en el sistema.
 - Ejemplo: proveedores solo ven Contabilidad; visibilidad por zona.
 - **Estado:** Pendiente a definición del plugin.
