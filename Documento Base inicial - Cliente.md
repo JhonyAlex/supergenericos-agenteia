@@ -12,7 +12,7 @@ Juan José — Super Genéricos (cliente)
 
 ●   --- Si es una sola, enviar **menú de bienvenida** (opciones por área).
 
-POR AHORA SOLO SE VA A DEJAR EL CRM EN EL AREA COMERCIAL, ENT NO SE DAN LAS OPCIONES DE CARTERA Y LAS DEMAS AREAS. 
+POR AHORA SOLO SE VA A DEJAR EL CRM EN EL AREA COMERCIAL, ENT SE SALUDA DESDE UN INICIO AL CLIENTE. 
 
 ●   Entregar **guion de bienvenida** (texto + botones) y **datos obligatorios** para “Cliente nuevo” (p. ej., Nombre, Ciudad, RUT/CC, Tipo de cliente, etc.).
 
@@ -114,6 +114,7 @@ ALIAS: DON CARLOS
 MENSAJE PARA CLIENTES YA CREADOS EN EL CRM 
 
 BUENOS DIAS O BUENAS TARDES (SEGUN EL HORARIO) ALIAS, ESPERO SE ENCUENTRE BINE, COMO LO PUEDO AYUDAR EL DÍA DE HOY? DESEA REALIZAR UNA COTIZACION PARA PEDIDO, AGENDAR UNA LLAMADA U OTRA CONSULTA 
+
 
 
 ●   Mostrar un **menú interactivo** que le permita elegir el servicio que necesita:
