@@ -34,8 +34,6 @@ Cliente proporciona CIUDAD
 - Si la ciudad **NO** corresponde a ninguna zona definida → se asigna a **CALL CENTER** (reparto equitativo entre asesores disponibles).
 - Los clientes **NO** se ligan directamente a un usuario; se ligan a la zona. Esto permite que, si se cambia un asesor, basta con reasignar la zona completa sin modificar cliente por cliente.
 
-- OJO TENER EN CUENTA QUE LA ZONA CALL CENTER SI NO ESTA ASIGNADA A UN SOLO ASESOR, SINO QUE EN ESA ZONA EN PARTICULAR SI SE DEBE ASIGNAR POR USUARIO 
-
 ---
 
 ## Tabla Maestra: Ciudad → Zona → Asesor
@@ -59,8 +57,6 @@ Cliente proporciona CIUDAD
 | Alcalá |
 | Andalucía |
 | Bugalagrande |
-Barcelona
-
 
 ### ZONA: RISARALDA → Asesor: GARCIA GRAJALES ERIKA VANESSA
 
@@ -107,7 +103,6 @@ Barcelona
 | Victoria |
 | Villamaría |
 | Viterbo |
-La hermosa
 
 ### ZONA: GERENCIA → Asesor: GARCIA GRAJALES ERIKA VANESSA
 
@@ -289,7 +284,7 @@ La hermosa
 
 | Ciudad |
 |---|
-|  |
+| Cali |
 | Buenaventura |
 | Buga |
 | Candelaria |
@@ -305,18 +300,11 @@ La hermosa
 | Vijes |
 | Yotoco |
 | Yumbo |
-Amaime 
-El placer 
-La magdalena 
-Santa Helena
-Costa rica 
-
 
 ### ZONA: CENTRO VALLE → Asesor: HEREDIA HURTADO ANGIE VANESSA
 
 | Ciudad |
 |---|
-Cali
 | Ansermanuevo |
 | Bolívar |
 | Caicedonia |
@@ -336,13 +324,6 @@ Cali
 | Ulloa |
 | Versalles |
 | Zarzal |
-La paila
-Loboguerrero 
-Ceilan 
-Venecia 
-La primavera 
-Salonica 
-
 
 ### ZONA: NARIÑO → Asesor: HEREDIA HURTADO ANGIE VANESSA
 
@@ -442,7 +423,6 @@ Salonica
 4. El bot solicita **RUT o certificado de Cámara de Comercio**.
 5. Tras recibir documentos, el bot crea el contacto en el CRM y lo marca como *prospecto nuevo*.
 
-SE DEBE CREAR UN EMBUDO PARA ESTOS CLIENTES NUEVOS
 ---
 
 ## Casos Especiales
