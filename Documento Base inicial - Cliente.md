@@ -12,6 +12,8 @@ Juan José — Super Genéricos (cliente)
 
 ●   --- Si es una sola, enviar **menú de bienvenida** (opciones por área).
 
+POR AHORA SOLO SE VA A DEJAR EL CRM EN EL AREA COMERCIAL, ENT SE SALUDA DESDE UN INICIO AL CLIENTE. 
+
 ●   Entregar **guion de bienvenida** (texto + botones) y **datos obligatorios** para “Cliente nuevo” (p. ej., Nombre, Ciudad, RUT/CC, Tipo de cliente, etc.).
 
 ●   Enviar **matriz de privacidad/accesos** (quién ve qué: p. ej., proveedores solo Contabilidad; visibilidad por zona). PDTE A PLUGIN
@@ -102,7 +104,18 @@ En esta primera fase, la inteligencia artificial se utilizará
 
 para brindar la atención inicial a los clientes y redirigirlos al área correspondiente de forma rápida y ordenada.
 
+LA IA SE UTILIZARA DESDE EL MOMENTO EN QUE EL CLIENTE ESCRIBE INICIALMENTE Y YA CUANDO NO PUEDA RESPONDER PASA AL ASESOR ASIGANDO QUE TIENE EL CLIENTE
 **1**⃣ **Si el cliente ya está registrado en el CRM:**
+
+DEJAR EN EL CLIENTE UN CAMPO PERSONALIZADO PARA QUE SE LE COLOQUE EL ALIAS CON EL QUE DEBE SALUDAR AL CLIENTE. EJEMPLO: 
+NOMBRE EMPRESA: DROGUERIA HOSPITALARIA 
+ALIAS: DON CARLOS 
+
+MENSAJE PARA CLIENTES YA CREADOS EN EL CRM 
+
+BUENOS DIAS O BUENAS TARDES (SEGUN EL HORARIO) ALIAS, ESPERO SE ENCUENTRE BINE, COMO LO PUEDO AYUDAR EL DÍA DE HOY? DESEA REALIZAR UNA COTIZACION PARA PEDIDO, AGENDAR UNA LLAMADA U OTRA CONSULTA 
+
+
 
 ●   Mostrar un **menú interactivo** que le permita elegir el servicio que necesita:
 

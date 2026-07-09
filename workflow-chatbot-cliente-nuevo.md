@@ -128,6 +128,7 @@ Pereira, Risaralda
 
 **Paso 2: Solicitud de RUT / Cámara de Comercio**
 
+A ESTE MENSAJE SE LE HIZO CAMBIOS EN LA OTRA HOJA
 ```
 🤖 Nonoi (automático):
 
@@ -162,7 +163,9 @@ Puedes enviar el documento como imagen o PDF directamente por aquí. 👇
 [Adjunta imagen/PDF del RUT]
 ```
 
-**Paso 3: Confirmación final**
+**Paso 3: Confirmación final** 
+
+ESTE MENSAJE SI ESTA BIEN
 
 ```
 🤖 Nonoi (automático):
@@ -193,7 +196,7 @@ En las próximas horas recibirás una llamada o mensaje de tu asesor para comple
 | 🏷️ Añadir etiqueta | `zona-risaralda` |
 | 👤 Asignar contacto | Erika García Grajales (asesor de zona) |
 | 📋 Crear tarea | "Seguir prospecto nuevo — Risaralda" |
-| 📅 Límite tarea | Antes de 4:00 PM del día siguiente |
+| 📅 Límite tarea | Antes de 5:00 PM del día siguiente |
 | Pipeline | Mover a "Prospecto Nuevo" |
 | 📊 Estado | `prospecto-validado` |
 
@@ -370,9 +373,9 @@ asesor-humano
 
 1. **Un solo mensaje para datos:** El bot debe permitir que el cliente envíe nombre y ciudad en un solo mensaje. No es necesario pedirlos por separado.
 
-2. **RUT es obligatorio:** Sin RUT o Cámara de Comercio, el registro no se considera completo. El bot debe insistir amablemente.
+2. **RUT es obligatorio:** Sin RUT o Cámara de Comercio, el registro no se considera completo. El bot debe insistir amablemente. ES UN DOCUMENTO SEA FOTO O PDF 
 
-3. **Política de datos:** Siempre incluir el enlace a la política de tratamiento de datos al solicitar documentos.
+3. **Política de datos:** Siempre incluir el enlace a la política de tratamiento de datos al solicitar documentos. Y AGREGAR EN EL MESNAJE QUE ACEPTE LA POLTIICA DE TRATAMIENTO DE DATOS 
 
 4. **Asignación por zona, no por asesor:** Los clientes se ligan a una ZONA. Si cambia el asesor, solo se reasigna la zona completa.
 
